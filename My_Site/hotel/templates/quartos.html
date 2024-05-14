@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+    Quartos
+{% endblock %}
+
+{% block body %}
+        <h1 class="m-4">Quartos</h1>
+
+        {% for item in dados_hotel %}
+        <div class="d-flex flex-row align-items-center">
+        <img src="" alt="Quarto de solteiro" class="m-4">
+        <div class="m-4"></div>
+        </div>
+        {% endfor %}
+{% endblock %}
