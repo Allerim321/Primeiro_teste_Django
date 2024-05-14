@@ -6,9 +6,12 @@
 {% endblock %}
 
 {% block body %}
-    <h1>
-        Hotel
-    </h1>
+        <h1 class="m-4">Bem vindo ao Hotel da Mimi! 🌄</h1>
 
-    <img src="{% static 'img/wonkakkkkk.jpg' %}" alt="Wonkakkkkk">
-{% endblock  %}
+        {% for item in dados_hotel %}
+        <div class="">
+        <img src="{{item.logo.url}}" alt="Logo" class="m-4">
+        <div class="m-4">{{item.descricao}}</div>
+        </div>
+        {% endfor %}
+{% endblock %}
