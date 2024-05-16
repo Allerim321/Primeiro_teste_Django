@@ -2,16 +2,69 @@
 {% load static %}
 
 {% block title %}
-    Quartos
+Quartos
 {% endblock %}
 
 {% block body %}
-        <h1 class="m-4">Quartos</h1>
+<h1 class="m-4">Quartos</h1>
 
-        {% for item in dados_hotel %}
-        <div class="d-flex flex-row align-items-center">
-        <img src="" alt="Quarto de solteiro" class="m-4">
-        <div class="m-4"></div>
+<div id="carouselExampleCaptions" class="carousel slide w-75 h-25 p-3 d-flex justify-content-center align-items-center">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{dados_quarto.0.foto_quarto.url}}" class="d-block w-100" alt="Quarto Solteiro">
+            <div class="carousel-caption d-none d-md-block">
+                <div style="--bs-bg-opacity: .5;" class="bg-black">
+                <h5 class="text-white">{{dados_quarto.0.tipo}}</h5>
+                <p class="text-white">{{dados_quarto.0.descricao}}</p>
+            </div>
+            </div>
         </div>
-        {% endfor %}
+        <div class="carousel-item">
+            <img src="{{dados_quarto.1.foto_quarto.url}}" class="d-block w-100" alt="Quarto Casal">
+            <div class="carousel-caption d-none d-md-block">
+                <div style="--bs-bg-opacity: .5;" class="bg-black">
+                <h5 class="text-white">{{dados_quarto.1.tipo}}</h5>
+                <p class="text-white">{{dados_quarto.1.descricao}}</p>
+            </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{{dados_quarto.2.foto_quarto.url}}" class="d-block w-100" alt="Quarto Confort">
+            <div class="carousel-caption d-none d-md-block">
+                <div style="--bs-bg-opacity: .5;" class="bg-black">
+                <h5 class="text-white">{{dados_quarto.2.tipo}}</h5>
+                <p class="text-white">{{dados_quarto.2.descricao}}</p>
+            </div>
+            </div>
+        </div>
+    <div class="carousel-item">
+        <img src="{{dados_quarto.3.foto_quarto.url}}" class="d-block w-100" alt="Quarto Luxo">
+        <div class="carousel-caption d-none d-md-block">
+            <div style="--bs-bg-opacity: .5;" class="bg-black">
+            <h5 class="text-white">{{dados_quarto.3.tipo}}</h5>
+            <p class="text-white">{{dados_quarto.3.descricao}}</p>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 {% endblock %}

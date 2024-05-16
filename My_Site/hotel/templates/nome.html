@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Hotel - Nome
+{% endblock %}
+
+
+{% block body %}
+
+<form action="nome" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
