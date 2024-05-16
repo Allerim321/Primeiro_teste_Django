@@ -2,9 +2,16 @@
 {% load static %}
 
 {% block title %}
-Reservar quarto
+    Reservar Quarto
 {% endblock %}
 
+
 {% block body %}
+
+<form action="reservar_quarto" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
 
 {% endblock %}

@@ -21,8 +21,9 @@ def nome(request):
         if form.is_valid():
             var_nome = form.cleaned_data['nome']
             var_email = form.cleaned_data['email']
+            var_senha = form.cleaned_data['senha']
             
-            user = usuario(nome=var_nome, email=var_email)
+            user = usuario(nome=var_nome, email=var_email, senha=var_senha)
             user.save()
             
             return HttpResponse("<h1>Obrigado</h1>")
@@ -30,4 +31,4 @@ def nome(request):
     else:
         form = FormNome()
 
-    return render(request, "nome.html", {"form": form})
+    return render(request, "reservar_quarto.html", {"form": form})
