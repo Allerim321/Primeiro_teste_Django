@@ -15,7 +15,7 @@ def quartos(request):
     return render(request, 'quartos.html', context)
 
 def nome(request):
-    
+
     if request.method == "POST":
         form = FormNome(request.POST)
         if form.is_valid():

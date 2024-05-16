@@ -2,16 +2,21 @@
 {% load static %}
 
 {% block title %}
-    Reservar Quarto
+Reservar Quarto
 {% endblock %}
 
 
 {% block body %}
 
-<form action="reservar_quarto" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
+<div class="d-flex justify-content-around p-5">
+    <img src="{% static 'My_Site/static/agendamento.png' %}" alt="Imagem">
+    <div style="background-color:rgb(173, 162, 160);" class="d-flex justify-content-around p-5 rounded-4">
+        <form action="reservar_quarto" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit" class="rounded-3 p-2">
+        </form>
+    </div>
+</div>
 
 {% endblock %}

@@ -29,7 +29,7 @@ class quarto(models.Model):
 class usuario(models.Model):
     nome = models.CharField(max_length=30)
     email = models.CharField(max_length=50)
-    senha = models.IntegerField()
+    senha = models.CharField(max_length=10)
     
     def __str__(self):
         return self.nome
