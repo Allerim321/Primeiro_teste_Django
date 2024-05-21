@@ -8,14 +8,28 @@ Reservar Quarto
 
 {% block body %}
 
-<div class="d-flex justify-content-around p-5">
-    <img src="{% static 'My_Site/static/agendamento.png' %}" alt="Imagem">
-    <div style="background-color:rgb(173, 162, 160);" class="d-flex justify-content-around p-5 rounded-4">
-        <form action="reservar_quarto" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Submit" class="rounded-3 p-2">
-        </form>
+<div class="d-flex justify-content-around align-items-center p-5">
+    <img src="{% static 'img/agendamento.png' %}" alt="Imagem" style="max-width: 250px;">
+    <div class="flex-row">
+        <h3>Reservar quarto</h3>
+        <br>
+        <div style="background-color:rgb(173, 162, 160); max-height: 300px;"
+            class="d-flex align-items-center p-5 rounded-4">
+            <form action="reservar_quarto" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <br>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Selecione o quarto</option>
+                    <option value="1">Solteiro</option>
+                    <option value="2">Casal</option>
+                    <option value="3">Confort</option>
+                    <option value="4">Luxo</option>
+                </select>
+                <br>
+                <input type="submit" value="Submit" class="rounded-3 border-1 p-2" style="background-color: #1c2331; color:whitesmoke">
+            </form>
+        </div>
     </div>
 </div>
 
